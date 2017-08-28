@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.e3mall.pojo.E3Result;
 import cn.e3mall.pojo.Obj2EUdata;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
@@ -40,6 +41,22 @@ public class ItemController {
 	public TbItem findById(@PathVariable long itemId){
 		TbItem tbItem = itemService.selectById(itemId);
 		return tbItem;
+	}
+	/**
+	 * ****************************************
+	 * @author lyl
+	 * 下午3:02:46
+	 * @describe
+	 * 根据ID查询
+	 * @param itemId
+	 * @return
+	 *******************
+	 */
+	@RequestMapping("item/save")
+	@ResponseBody
+	public E3Result saveItem(TbItem item, String desc) {
+		E3Result result = itemService.addItem(item, desc);
+		return result;
 	}
 	
 	/**

@@ -11,7 +11,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>cn.e3mall</groupId>
-			<artifactId>e3-manager-dao</artifactId>
+			<artifactId>e3-manager-pojo</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

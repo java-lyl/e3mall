@@ -113,13 +113,16 @@
 		//$("#itemAddForm").serialize()将表单序列号为key-value形式的字符串
 		$.post("/item/save",$("#itemAddForm").serialize(), function(data){
 			if(data.status == 200){
-				$.messager.alert('提示','新增商品成功!');
+				$.messager.alert('提示','新增商品成功!','info',function(){
+					clearForm()
+				});
 			}
-		});
+		}); 
 	}
 	
 	function clearForm(){
 		$('#itemAddForm').form('reset');
 		itemAddEditor.html('');
+		$("#itemAddForm").find(".pics li").remove();
 	}
 </script>
